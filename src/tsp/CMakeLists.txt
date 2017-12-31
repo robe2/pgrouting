@@ -1,4 +1,12 @@
-set(PACKAGE_SQL_FILES "")
-add_subdirectory(sql)
-set(PACKAGE_SQL_FILES "${PACKAGE_SQL_FILES}" PARENT_SCOPE)
-subdirs(doc src test)
+ADD_LIBRARY(tsp OBJECT
+    eucledianTSP.c
+    newTSP.c
+
+    newTSP_driver.cpp
+    eucledianTSP_driver.cpp
+
+    Dmatrix.cpp
+    eucledianDmatrix.cpp
+    tour.cpp
+
+    )
