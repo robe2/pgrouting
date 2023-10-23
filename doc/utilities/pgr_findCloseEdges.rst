@@ -33,7 +33,7 @@
 Description
 -------------------------------------------------------------------------------
 
-``pgr_findCloseEdges`` - An utility function that finds the closest edge to a
+``pgr_findCloseEdges`` - A utility function that finds the closest edge to a
 point geometry.
 
 * The geometries must be in the same coordinate system (have the same SRID).
