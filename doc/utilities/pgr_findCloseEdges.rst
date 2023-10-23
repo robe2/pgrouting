@@ -54,7 +54,7 @@ Signatures
    | **options:** ``[cap, partial, dryrun]``
 
    | Returns set of |result-find|
-   | OR EMPTY SET
+   | OR 0 records
 
 .. index::
     single: findCloseEdges(One point)
@@ -69,7 +69,7 @@ One point
    | **options:** ``[cap, partial, dryrun]``
 
    | Returns set of |result-find|
-   | OR EMPTY SET
+   | OR 0 records
 
 :Example: With default values
 
@@ -104,7 +104,7 @@ Many points
    | **options:** ``[cap, partial, dryrun]``
 
    | Returns set of |result-find|
-   | OR EMPTY SET
+   | OR 0 records
 
 :Example: Find at most :math:`2` edges close to all vertices on the points of
           interest table.
@@ -118,7 +118,7 @@ One answer per point, as small as possible.
 Columns ``edge_id``, ``fraction``, ``side`` and ``geom`` are returned with
 values.
 
-``geom`` contains the original point geometry to assist on deterpartialing to which
+``geom`` contains the original point geometry to assist on determining to which
 point geometry the row belongs to.
 
 .. index::
