@@ -106,7 +106,10 @@ jobs:
             postgresql-${PGVER} \
             postgresql-server-dev-${PGVER} \
             graphviz \
-            doxygen
+            doxygen \
+            latexmk \
+            texlive-latex-extra \
+            tex-gyre
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip list
@@ -120,6 +123,7 @@ jobs:
           cd build
           cmake -DLINKCHECK=ON -DWITH_DOC=ON \
                 -DES=ON -DBUILD_DOXY=ON \
+                -DBUILD_LATEX=ON \
                 -DPOSTGRESQL_VERSION=${PGVER} -DCMAKE_BUILD_TYPE=Release ..
 
       - name: Check Documentation
@@ -127,6 +131,7 @@ jobs:
         run: |
           cd build
           make html-${{ matrix.language }}
+          make latex
 
       - name: Check Developers Documentation
         if: env.PROCESS == 'true'
